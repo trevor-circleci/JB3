@@ -39,17 +39,17 @@ const Navigation = ({ data, navClass }) => (
 );
 
 Navigation.defaultProps = {
-  navClass: `site-nav-item`
+  navClass: `site-nav-item`,
 };
 
 Navigation.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string.isRequired,
-      url: PropTypes.string.isRequired
+      url: PropTypes.string.isRequired,
     }).isRequired
   ).isRequired,
-  navClass: PropTypes.string
+  navClass: PropTypes.string,
 };
 
 export default Navigation;

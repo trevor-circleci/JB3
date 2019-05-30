@@ -15,13 +15,13 @@ const PostCard = ({ post }) => {
           <div
             className="post-card-image"
             style={{
-              backgroundImage: `url(${post.feature_image})`
+              backgroundImage: `url(${post.feature_image})`,
             }}
           />
         )}
         {post.tags && (
           <div className="post-card-tags">
-            {" "}
+            {` `}
             <Tags post={post} visibility="public" autolink={false} />
           </div>
         )}
@@ -63,15 +63,15 @@ PostCard.propTypes = {
     featured: PropTypes.bool,
     tags: PropTypes.arrayOf(
       PropTypes.shape({
-        name: PropTypes.string
+        name: PropTypes.string,
       })
     ),
     excerpt: PropTypes.string.isRequired,
     primary_author: PropTypes.shape({
       name: PropTypes.string.isRequired,
-      profile_image: PropTypes.string
-    }).isRequired
-  }).isRequired
+      profile_image: PropTypes.string,
+    }).isRequired,
+  }).isRequired,
 };
 
 export default PostCard;

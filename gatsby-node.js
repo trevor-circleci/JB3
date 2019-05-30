@@ -26,7 +26,7 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         }
-      `).then(result => {
+      `).then((result) => {
         if (result.errors) {
           return reject(result.errors);
         }
@@ -48,8 +48,8 @@ exports.createPages = ({ graphql, actions }) => {
             context: {
               // Data passed to context is available
               // in page queries as GraphQL variables.
-              slug: node.slug
-            }
+              slug: node.slug,
+            },
           });
         });
 
@@ -65,7 +65,7 @@ exports.createPages = ({ graphql, actions }) => {
             } else {
               return `/page`;
             }
-          }
+          },
         });
 
         return resolve();
@@ -91,7 +91,7 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         }
-      `).then(result => {
+      `).then((result) => {
         if (result.errors) {
           return reject(result.errors);
         }
@@ -139,8 +139,8 @@ exports.createPages = ({ graphql, actions }) => {
                 prevPageNumber: prevPageNumber,
                 nextPageNumber: nextPageNumber,
                 previousPagePath: previousPagePath,
-                nextPagePath: nextPagePath
-              }
+                nextPagePath: nextPagePath,
+              },
             });
           });
         });
@@ -168,7 +168,7 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         }
-      `).then(result => {
+      `).then((result) => {
         if (result.errors) {
           return reject(result.errors);
         }
@@ -216,8 +216,8 @@ exports.createPages = ({ graphql, actions }) => {
                 prevPageNumber: prevPageNumber,
                 nextPageNumber: nextPageNumber,
                 previousPagePath: previousPagePath,
-                nextPagePath: nextPagePath
-              }
+                nextPagePath: nextPagePath,
+              },
             });
           });
         });
@@ -243,7 +243,7 @@ exports.createPages = ({ graphql, actions }) => {
             }
           }
         }
-      `).then(result => {
+      `).then((result) => {
         if (result.errors) {
           return reject(result.errors);
         }
@@ -265,8 +265,8 @@ exports.createPages = ({ graphql, actions }) => {
             context: {
               // Data passed to context is available
               // in page queries as GraphQL variables.
-              slug: node.slug
-            }
+              slug: node.slug,
+            },
           });
         });
 

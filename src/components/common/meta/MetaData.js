@@ -50,7 +50,7 @@ const MetaData = ({ data, settings, title, description, image, location }) => {
 };
 
 MetaData.defaultProps = {
-  data: {}
+  data: {},
 };
 
 MetaData.propTypes = {
@@ -58,17 +58,17 @@ MetaData.propTypes = {
     ghostPost: PropTypes.object,
     ghostTag: PropTypes.object,
     ghostAuthor: PropTypes.object,
-    ghostPage: PropTypes.object
+    ghostPage: PropTypes.object,
   }).isRequired,
   settings: PropTypes.shape({
-    allGhostSettings: PropTypes.object.isRequired
+    allGhostSettings: PropTypes.object.isRequired,
   }).isRequired,
   location: PropTypes.shape({
-    pathname: PropTypes.string.isRequired
+    pathname: PropTypes.string.isRequired,
   }).isRequired,
   title: PropTypes.string,
   description: PropTypes.string,
-  image: PropTypes.string
+  image: PropTypes.string,
 };
 
 const MetaDataQuery = props => (

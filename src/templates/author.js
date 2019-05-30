@@ -92,14 +92,14 @@ Author.propTypes = {
       bio: PropTypes.string,
       location: PropTypes.string,
       facebook: PropTypes.string,
-      twitter: PropTypes.string
+      twitter: PropTypes.string,
     }),
-    allGhostPost: PropTypes.object.isRequired
+    allGhostPost: PropTypes.object.isRequired,
   }).isRequired,
   location: PropTypes.shape({
-    pathname: PropTypes.string.isRequired
+    pathname: PropTypes.string.isRequired,
   }).isRequired,
-  pageContext: PropTypes.object
+  pageContext: PropTypes.object,
 };
 
 export default Author;

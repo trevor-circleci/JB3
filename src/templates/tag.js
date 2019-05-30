@@ -41,14 +41,14 @@ Tag.propTypes = {
   data: PropTypes.shape({
     ghostTag: PropTypes.shape({
       name: PropTypes.string.isRequired,
-      description: PropTypes.string
+      description: PropTypes.string,
     }),
-    allGhostPost: PropTypes.object.isRequired
+    allGhostPost: PropTypes.object.isRequired,
   }).isRequired,
   location: PropTypes.shape({
-    pathname: PropTypes.string.isRequired
+    pathname: PropTypes.string.isRequired,
   }).isRequired,
-  pageContext: PropTypes.object
+  pageContext: PropTypes.object,
 };
 
 export default Tag;

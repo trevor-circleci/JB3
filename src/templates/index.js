@@ -36,12 +36,12 @@ const Index = ({ data, location, pageContext }) => {
 
 Index.propTypes = {
   data: PropTypes.shape({
-    allGhostPost: PropTypes.object.isRequired
+    allGhostPost: PropTypes.object.isRequired,
   }).isRequired,
   location: PropTypes.shape({
-    pathname: PropTypes.string.isRequired
+    pathname: PropTypes.string.isRequired,
   }).isRequired,
-  pageContext: PropTypes.object
+  pageContext: PropTypes.object,
 };
 
 export default Index;

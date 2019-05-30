@@ -7,7 +7,7 @@ const generateItem = function generateItem(post) {
   const html = post.html;
   const htmlContent = cheerio.load(html, {
     decodeEntities: false,
-    xmlMode: true
+    xmlMode: true,
   });
   const item = {
     title: post.title,
@@ -20,7 +20,7 @@ const generateItem = function generateItem(post) {
       `name`
     ),
     author: post.primary_author ? post.primary_author.name : null,
-    custom_elements: []
+    custom_elements: [],
   };
   let imageUrl;
 
@@ -32,9 +32,9 @@ const generateItem = function generateItem(post) {
       "media:content": {
         _attr: {
           url: imageUrl,
-          medium: `image`
-        }
-      }
+          medium: `image`,
+        },
+      },
     });
 
     // Also add the image to the content, because not all readers support media:content
@@ -46,18 +46,16 @@ const generateItem = function generateItem(post) {
 
   item.custom_elements.push({
     "content:encoded": {
-      _cdata: htmlContent.html()
-    }
+      _cdata: htmlContent.html(),
+    },
   });
   return item;
 };
 
 const generateRSSFeed = function generateRSSFeed(siteConfig) {
   return {
-    serialize: ({ query: { allGhostPost } }) =>
-      allGhostPost.edges.map(edge =>
-        Object.assign({}, generateItem(edge.node))
-      ),
+    serialize: ({ query: { allGhostPost } }) => allGhostPost.edges.map(edge => Object.assign({}, generateItem(edge.node))
+    ),
     setup: ({ query: { allGhostSettings } }) => {
       const siteTitle = allGhostSettings.edges[0].node.title || `No Title`;
       const siteDescription =
@@ -73,11 +71,11 @@ const generateRSSFeed = function generateRSSFeed(siteConfig) {
         ttl: `60`,
         custom_namespaces: {
           content: `http://purl.org/rss/1.0/modules/content/`,
-          media: `http://search.yahoo.com/mrss/`
-        }
+          media: `http://search.yahoo.com/mrss/`,
+        },
       };
       return {
-        ...feed
+        ...feed,
       };
     },
     query: `
@@ -126,7 +124,7 @@ const generateRSSFeed = function generateRSSFeed(siteConfig) {
             }
         }
   `,
-    output: `/rss`
+    output: `/rss`,
   };
 };
 

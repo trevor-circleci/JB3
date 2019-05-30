@@ -39,10 +39,10 @@ Page.propTypes = {
     ghostPage: PropTypes.shape({
       title: PropTypes.string.isRequired,
       html: PropTypes.string.isRequired,
-      feature_image: PropTypes.string
-    }).isRequired
+      feature_image: PropTypes.string,
+    }).isRequired,
   }).isRequired,
-  location: PropTypes.object.isRequired
+  location: PropTypes.object.isRequired,
 };
 
 export default Page;

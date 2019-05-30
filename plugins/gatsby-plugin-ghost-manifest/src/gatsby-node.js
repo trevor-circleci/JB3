@@ -7,7 +7,7 @@ const { defaultIcons, doesIconExist } = require(`./common.js`);
 sharp.simd(true);
 
 function generateIcons(icons, srcIcon) {
-  return Promise.map(icons, icon => {
+  return Promise.map(icons, (icon) => {
     const size = parseInt(icon.sizes.substring(0, icon.sizes.lastIndexOf(`x`)));
     const imgPath = path.join(`public`, icon.src);
 
@@ -25,7 +25,7 @@ exports.onPostBuild = async ({ graphql }, pluginOptions) => {
   const siteTitle = data.allGhostSettings.edges[0].node.title || `No Title`;
   manifest = {
     ...manifest,
-    name: siteTitle
+    name: siteTitle,
   };
 
   // Delete options we won't pass to the manifest.webmanifest.

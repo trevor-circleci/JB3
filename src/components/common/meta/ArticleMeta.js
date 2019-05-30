@@ -177,22 +177,22 @@ ArticleMetaGhost.propTypes = {
       PropTypes.shape({
         name: PropTypes.string,
         slug: PropTypes.string,
-        visibility: PropTypes.string
+        visibility: PropTypes.string,
       })
     ),
     primaryTag: PropTypes.shape({
-      name: PropTypes.string
+      name: PropTypes.string,
     }),
     og_title: PropTypes.string,
     og_description: PropTypes.string,
     twitter_title: PropTypes.string,
     twitter_description: PropTypes.string,
-    excerpt: PropTypes.string.isRequired
+    excerpt: PropTypes.string.isRequired,
   }).isRequired,
   settings: PropTypes.shape({
-    allGhostSettings: PropTypes.object.isRequired
+    allGhostSettings: PropTypes.object.isRequired,
   }).isRequired,
-  canonical: PropTypes.string.isRequired
+  canonical: PropTypes.string.isRequired,
 };
 
 const ArticleMetaQuery = props => (

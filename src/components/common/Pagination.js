@@ -7,7 +7,7 @@ const Pagination = ({ pageContext }) => {
     previousPagePath,
     nextPagePath,
     humanPageNumber,
-    numberOfPages
+    numberOfPages,
   } = pageContext;
 
   return (
@@ -36,7 +36,7 @@ const Pagination = ({ pageContext }) => {
 };
 
 Pagination.propTypes = {
-  pageContext: PropTypes.object.isRequired
+  pageContext: PropTypes.object.isRequired,
 };
 
 export default Pagination;
