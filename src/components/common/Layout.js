@@ -1,14 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
-import { Link, StaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import React from "react";
+import PropTypes from "prop-types";
+import Helmet from "react-helmet";
+import { Link, StaticQuery, graphql } from "gatsby";
+import Img from "gatsby-image";
 
-import { Navigation } from '.';
-import config from '../../utils/siteConfig';
+import { Navigation } from ".";
+import config from "../../utils/siteConfig";
 
 // Styles
-import '../../styles/app.css';
+import "../../styles/app.css";
 
 /**
  * Main layout component
@@ -132,7 +132,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
           <footer className="site-foot">
             <div className="site-foot-nav container">
               <div className="site-foot-nav-left">
-                <Link to="/">{site.title}</Link> © 2019 &mdash; Published with{' '}
+                <Link to="/">{site.title}</Link> © 2019 &mdash; Published with{" "}
                 <a
                   className="site-foot-nav-item"
                   href="https://ghost.org"
@@ -161,8 +161,8 @@ DefaultLayout.propTypes = {
   bodyClass: PropTypes.string,
   isHome: PropTypes.bool,
   data: PropTypes.shape({
-    allGhostSettings: PropTypes.object.isRequired,
-  }).isRequired,
+    allGhostSettings: PropTypes.object.isRequired
+  }).isRequired
 };
 
 const DefaultLayoutSettingsQuery = props => (

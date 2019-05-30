@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import { Layout } from '../components/common';
+import React from "react";
+import { Link } from "gatsby";
+import { Layout } from "../components/common";
 
 const NotFoundPage = () => (
   <Layout>

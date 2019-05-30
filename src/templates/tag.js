@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
+import React from "react";
+import PropTypes from "prop-types";
+import { graphql } from "gatsby";
 
-import { Layout, PostCard, Pagination } from '../components/common';
-import { MetaData } from '../components/common/meta';
+import { Layout, PostCard, Pagination } from "../components/common";
+import { MetaData } from "../components/common/meta";
 
 /**
  * Tag page (/tag/:slug)
@@ -41,14 +41,14 @@ Tag.propTypes = {
   data: PropTypes.shape({
     ghostTag: PropTypes.shape({
       name: PropTypes.string.isRequired,
-      description: PropTypes.string,
+      description: PropTypes.string
     }),
-    allGhostPost: PropTypes.object.isRequired,
+    allGhostPost: PropTypes.object.isRequired
   }).isRequired,
   location: PropTypes.shape({
-    pathname: PropTypes.string.isRequired,
+    pathname: PropTypes.string.isRequired
   }).isRequired,
-  pageContext: PropTypes.object,
+  pageContext: PropTypes.object
 };
 
 export default Tag;

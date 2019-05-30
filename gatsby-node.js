@@ -48,8 +48,8 @@ exports.createPages = ({ graphql, actions }) => {
             context: {
               // Data passed to context is available
               // in page queries as GraphQL variables.
-              slug: node.slug,
-            },
+              slug: node.slug
+            }
           });
         });
 
@@ -65,11 +65,11 @@ exports.createPages = ({ graphql, actions }) => {
             } else {
               return `/page`;
             }
-          },
+          }
         });
 
         return resolve();
-      }),
+      })
     );
   });
 
@@ -139,14 +139,14 @@ exports.createPages = ({ graphql, actions }) => {
                 prevPageNumber: prevPageNumber,
                 nextPageNumber: nextPageNumber,
                 previousPagePath: previousPagePath,
-                nextPagePath: nextPagePath,
-              },
+                nextPagePath: nextPagePath
+              }
             });
           });
         });
 
         return resolve();
-      }),
+      })
     );
   });
 
@@ -216,13 +216,13 @@ exports.createPages = ({ graphql, actions }) => {
                 prevPageNumber: prevPageNumber,
                 nextPageNumber: nextPageNumber,
                 previousPagePath: previousPagePath,
-                nextPagePath: nextPagePath,
-              },
+                nextPagePath: nextPagePath
+              }
             });
           });
         });
         return resolve();
-      }),
+      })
     );
   });
 
@@ -265,13 +265,13 @@ exports.createPages = ({ graphql, actions }) => {
             context: {
               // Data passed to context is available
               // in page queries as GraphQL variables.
-              slug: node.slug,
-            },
+              slug: node.slug
+            }
           });
         });
 
         return resolve();
-      }),
+      })
     );
   });
 

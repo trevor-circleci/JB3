@@ -1,5 +1,5 @@
-import _ from 'lodash';
-import PropTypes from 'prop-types';
+import _ from "lodash";
+import PropTypes from "prop-types";
 
 export const getAuthorProperties = primaryAuthor => {
   let authorProfiles = [];
@@ -11,7 +11,7 @@ export const getAuthorProperties = primaryAuthor => {
       : null,
     primaryAuthor.facebook
       ? `https://www.facebook.com/${primaryAuthor.facebook.replace(/^\//, ``)}/`
-      : null,
+      : null
   );
 
   authorProfiles = _.compact(authorProfiles);
@@ -24,12 +24,12 @@ export const getAuthorProperties = primaryAuthor => {
     image: primaryAuthor.profile_image || null,
     facebookUrl: primaryAuthor.facebook
       ? `https://www.facebook.com/${primaryAuthor.facebook.replace(/^\//, ``)}/`
-      : null,
+      : null
   };
 };
 
 getAuthorProperties.defaultProps = {
-  fetchAuthorData: false,
+  fetchAuthorData: false
 };
 
 getAuthorProperties.PropTypes = {
@@ -38,8 +38,8 @@ getAuthorProperties.PropTypes = {
     profile_image: PropTypes.string,
     website: PropTypes.string,
     twitter: PropTypes.string,
-    facebook: PropTypes.string,
-  }).isRequired,
+    facebook: PropTypes.string
+  }).isRequired
 };
 
 export default getAuthorProperties;

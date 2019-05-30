@@ -1,7 +1,7 @@
-import React from 'react';
-import Helmet from 'react-helmet';
-import PropTypes from 'prop-types';
-import config from '../../../utils/siteConfig';
+import React from "react";
+import Helmet from "react-helmet";
+import PropTypes from "prop-types";
+import config from "../../../utils/siteConfig";
 
 const ImageMeta = ({ image }) => {
   if (!image) {
@@ -20,7 +20,7 @@ const ImageMeta = ({ image }) => {
 };
 
 ImageMeta.propTypes = {
-  image: PropTypes.string,
+  image: PropTypes.string
 };
 
 export default ImageMeta;

@@ -1,4 +1,4 @@
-import { graphql } from 'gatsby';
+import { graphql } from "gatsby";
 
 /**
  * These so called fragments are the fields we query on each template.

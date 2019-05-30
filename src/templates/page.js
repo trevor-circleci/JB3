@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
+import React from "react";
+import PropTypes from "prop-types";
+import { graphql } from "gatsby";
 
-import { Layout } from '../components/common';
-import { MetaData } from '../components/common/meta';
+import { Layout } from "../components/common";
+import { MetaData } from "../components/common/meta";
 
 /**
  * Single page (/:slug)
@@ -39,10 +39,10 @@ Page.propTypes = {
     ghostPage: PropTypes.shape({
       title: PropTypes.string.isRequired,
       html: PropTypes.string.isRequired,
-      feature_image: PropTypes.string,
-    }).isRequired,
+      feature_image: PropTypes.string
+    }).isRequired
   }).isRequired,
-  location: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired
 };
 
 export default Page;

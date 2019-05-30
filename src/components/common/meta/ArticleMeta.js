@@ -1,15 +1,15 @@
-import React from 'react';
-import Helmet from 'react-helmet';
-import { StaticQuery, graphql } from 'gatsby';
-import PropTypes from 'prop-types';
-import _ from 'lodash';
-import url from 'url';
+import React from "react";
+import Helmet from "react-helmet";
+import { StaticQuery, graphql } from "gatsby";
+import PropTypes from "prop-types";
+import _ from "lodash";
+import url from "url";
 
-import getAuthorProperties from './getAuthorProperties';
-import ImageMeta from './ImageMeta';
-import config from '../../../utils/siteConfig';
+import getAuthorProperties from "./getAuthorProperties";
+import ImageMeta from "./ImageMeta";
+import config from "../../../utils/siteConfig";
 
-import { tags as tagsHelper } from '@tryghost/helpers';
+import { tags as tagsHelper } from "@tryghost/helpers";
 
 const ArticleMetaGhost = ({ data, settings, canonical }) => {
   const ghostPost = data;
@@ -18,7 +18,7 @@ const ArticleMetaGhost = ({ data, settings, canonical }) => {
   const author = getAuthorProperties(ghostPost.primary_author);
   const publicTags = _.map(
     tagsHelper(ghostPost, { visibility: `public`, fn: tag => tag }),
-    `name`,
+    `name`
   );
   const primaryTag = publicTags[0] || ``;
   const shareImage = ghostPost.feature_image
@@ -93,7 +93,7 @@ const ArticleMetaGhost = ({ data, settings, canonical }) => {
             name="twitter:site"
             content={`https://twitter.com/${settings.twitter.replace(
               /^@/,
-              ``,
+              ``
             )}/`}
           />
         )}
@@ -177,22 +177,22 @@ ArticleMetaGhost.propTypes = {
       PropTypes.shape({
         name: PropTypes.string,
         slug: PropTypes.string,
-        visibility: PropTypes.string,
-      }),
+        visibility: PropTypes.string
+      })
     ),
     primaryTag: PropTypes.shape({
-      name: PropTypes.string,
+      name: PropTypes.string
     }),
     og_title: PropTypes.string,
     og_description: PropTypes.string,
     twitter_title: PropTypes.string,
     twitter_description: PropTypes.string,
-    excerpt: PropTypes.string.isRequired,
+    excerpt: PropTypes.string.isRequired
   }).isRequired,
   settings: PropTypes.shape({
-    allGhostSettings: PropTypes.object.isRequired,
+    allGhostSettings: PropTypes.object.isRequired
   }).isRequired,
-  canonical: PropTypes.string.isRequired,
+  canonical: PropTypes.string.isRequired
 };
 
 const ArticleMetaQuery = props => (

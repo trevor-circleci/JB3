@@ -26,7 +26,7 @@
     "dev": "gatsby develop",
     "lint": "eslint . --ext .js --cache",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "prettier-eslint --write \"./**/*.{js,json}\""
+    "format": "prettier-eslint --write \"**/*.{js,json}\""
   },
   "devDependencies": {
     "eslint": "5.16.0",

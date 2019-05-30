@@ -1,12 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { StaticQuery, graphql } from 'gatsby';
-import url from 'url';
+import React from "react";
+import PropTypes from "prop-types";
+import { StaticQuery, graphql } from "gatsby";
+import url from "url";
 
-import config from '../../../utils/siteConfig';
-import ArticleMeta from './ArticleMeta';
-import WebsiteMeta from './WebsiteMeta';
-import AuthorMeta from './AuthorMeta';
+import config from "../../../utils/siteConfig";
+import ArticleMeta from "./ArticleMeta";
+import WebsiteMeta from "./WebsiteMeta";
+import AuthorMeta from "./AuthorMeta";
 
 /**
  * MetaData will generate all relevant meta data information incl.
@@ -50,7 +50,7 @@ const MetaData = ({ data, settings, title, description, image, location }) => {
 };
 
 MetaData.defaultProps = {
-  data: {},
+  data: {}
 };
 
 MetaData.propTypes = {
@@ -58,17 +58,17 @@ MetaData.propTypes = {
     ghostPost: PropTypes.object,
     ghostTag: PropTypes.object,
     ghostAuthor: PropTypes.object,
-    ghostPage: PropTypes.object,
+    ghostPage: PropTypes.object
   }).isRequired,
   settings: PropTypes.shape({
-    allGhostSettings: PropTypes.object.isRequired,
+    allGhostSettings: PropTypes.object.isRequired
   }).isRequired,
   location: PropTypes.shape({
-    pathname: PropTypes.string.isRequired,
+    pathname: PropTypes.string.isRequired
   }).isRequired,
   title: PropTypes.string,
   description: PropTypes.string,
-  image: PropTypes.string,
+  image: PropTypes.string
 };
 
 const MetaDataQuery = props => (

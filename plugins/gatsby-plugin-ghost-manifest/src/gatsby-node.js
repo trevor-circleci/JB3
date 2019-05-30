@@ -25,7 +25,7 @@ exports.onPostBuild = async ({ graphql }, pluginOptions) => {
   const siteTitle = data.allGhostSettings.edges[0].node.title || `No Title`;
   manifest = {
     ...manifest,
-    name: siteTitle,
+    name: siteTitle
   };
 
   // Delete options we won't pass to the manifest.webmanifest.
@@ -49,7 +49,7 @@ exports.onPostBuild = async ({ graphql }, pluginOptions) => {
 
   fs.writeFileSync(
     path.join(`public`, `manifest.webmanifest`),
-    JSON.stringify(manifest),
+    JSON.stringify(manifest)
   );
 
   // Only auto-generate icons if a src icon is defined.
@@ -57,7 +57,7 @@ exports.onPostBuild = async ({ graphql }, pluginOptions) => {
     // Check if the icon exists
     if (!doesIconExist(icon)) {
       Promise.reject(
-        `icon (${icon}) does not exist as defined in gatsby-config.js. Make sure the file exists relative to the root of the site.`,
+        `icon (${icon}) does not exist as defined in gatsby-config.js. Make sure the file exists relative to the root of the site.`
       );
     }
     generateIcons(manifest.icons, icon).then(() => {
