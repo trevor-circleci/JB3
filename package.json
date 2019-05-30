@@ -25,12 +25,15 @@
     "build": "gatsby build",
     "dev": "gatsby develop",
     "lint": "eslint . --ext .js --cache",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier-eslint --write \"./**/*.{js,json}\""
   },
   "devDependencies": {
     "eslint": "5.16.0",
     "eslint-plugin-ghost": "0.2.0",
-    "eslint-plugin-react": "7.13.0"
+    "eslint-plugin-react": "7.13.0",
+    "prettier-eslint": "^8.8.2",
+    "prettier-eslint-cli": "^4.7.1"
   },
   "dependencies": {
     "@tryghost/helpers": "1.1.4",

@@ -1,3 +1,4 @@
 public/**
 plugins/**/*.js
 !plugins/*/src/*.js
+node_modules/
