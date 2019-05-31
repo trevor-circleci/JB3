@@ -301,7 +301,6 @@ html {
   overflow-x: hidden;
   overflow-y: scroll;
   font-size: 62.5%;
-  background: var(--color-base);
 
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
@@ -665,7 +664,6 @@ h6 {
   padding-top: 20px;
   padding-bottom: 20px;
   color: #fff;
-  background: var(--color-base);
 }
 
 .site-nav-item {
@@ -685,8 +683,8 @@ h6 {
   margin: -5px 0 0;
 }
 
-.site-logo {
-  height: 25px;
+.logo-image {
+  margin: 0 auto;
 }
 
 .site-mast {
@@ -698,19 +696,19 @@ h6 {
 .site-banner {
   max-width: 80%;
   margin: 0 auto;
-  padding: 10vw 0;
+  padding: 7vw 0;
   text-align: center;
 }
 
 .site-banner-title {
   margin: 0;
   padding: 0;
-  color: #fff;
   font-size: 4rem;
   line-height: 1.3em;
 }
 
 .site-banner-desc {
+  color: var(--color-secondary);
   margin: 5px 0 0 0;
   padding: 0;
   font-size: 2.4rem;

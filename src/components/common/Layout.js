@@ -33,19 +33,11 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
           <header className="site-head">
             <div className="container">
               <div className="site-mast">
-                <Link to="/">
-                  {site.logo ? (
-                    <img
-                      className="site-logo"
-                      src={site.logo}
-                      alt={site.title}
-                    />
-                  ) : (
-                    <Img
-                      fixed={data.file.childImageSharp.fixed}
-                      alt={site.title}
-                    />
-                  )}
+                <Link to="/" className="logo-image">
+                  <Img
+                    fixed={data.file.childImageSharp.fixed}
+                    alt={site.title}
+                  />
                 </Link>
               </div>
               {isHome ? (
@@ -124,9 +116,9 @@ const DefaultLayoutSettingsQuery = props => (
             }
           }
         }
-        file(relativePath: { eq: "ghost-icon.png" }) {
+        file(relativePath: { eq: "logo.png" }) {
           childImageSharp {
-            fixed(width: 30, height: 30) {
+            fixed(width: 126) {
               ...GatsbyImageSharpFixed
             }
           }
