@@ -4,8 +4,6 @@ import Helmet from "react-helmet";
 import { Link, StaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 
-import { Navigation } from ".";
-
 // Styles
 import "../../styles/app.css";
 
@@ -46,17 +44,6 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                   <p className="site-banner-desc">{site.description}</p>
                 </div>
               ) : null}
-              <nav className="site-nav">
-                <div className="site-nav-left">
-                  {/* The navigation items as setup in Ghost */}
-                  <Navigation data={site.navigation} navClass="site-nav-item" />
-                </div>
-                <div className="site-nav-right">
-                  <Link className="site-nav-button" to="/about">
-                    About
-                  </Link>
-                </div>
-              </nav>
             </div>
           </header>
 
@@ -68,25 +55,16 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
 
         <div className="viewport-bottom">
           {/* The footer at the very bottom of the screen */}
-          <footer className="site-foot">
-            <div className="site-foot-nav container">
-              <div className="site-foot-nav-left">
-                <Link to="/">{site.title}</Link> © 2019 &mdash; Published with
-                {` `}
-                <a
-                  className="site-foot-nav-item"
-                  href="https://ghost.org"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Ghost
-                </a>
+          <footer className="site-foot-wrapper">
+            <div className="site-foot container">
+              <div className="site-foot-left">
+                <Link to="/">{site.title}</Link>
               </div>
-              <div className="site-foot-nav-right">
-                <Navigation
-                  data={site.navigation}
-                  navClass="site-foot-nav-item"
-                />
+              <div className="site-foot-right">
+                © 2019 &mdash; Build with ♥ in
+                <a href="https://www.instagram.com/stmaartentourism/">
+                  St.Maarten
+                </a>
               </div>
             </div>
           </footer>
