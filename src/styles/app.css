@@ -542,7 +542,7 @@ h6 {
 }
 
 .post-full-content {
-  max-width: 720px;
+  max-width: 740px;
   margin: 0 auto;
   background: #fff;
 }
@@ -647,14 +647,13 @@ h6 {
 }
 
 .content-body pre {
-  margin: 0.4em 0 1.8em;
-  font-size: 1.6rem;
+  /*font-size: 1.6rem;
   line-height: 1.4em;
   white-space: pre-wrap;
   padding: 20px;
   background: var(--color-base);
   color: #fff;
-  border-radius: 12px;
+  border-radius: 12px; */
 }
 
 /* Header
@@ -728,7 +727,7 @@ h6 {
   display: block;
   color: inherit;
   text-decoration: none;
-  padding: 6vh 0;
+  padding: 20px 0;
 }
 
 .post-card:hover {

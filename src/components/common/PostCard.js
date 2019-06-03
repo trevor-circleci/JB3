@@ -8,7 +8,6 @@ const PostCard = ({ post }) => {
   const url = `/${post.slug}/`;
   const posted = moment(post.published_at, `YYYYMMDD`).fromNow();
 
-  console.log(posted);
   return (
     <Link to={url} className="post-card">
       <header className="post-card-header">
