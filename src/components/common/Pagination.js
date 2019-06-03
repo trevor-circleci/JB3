@@ -10,6 +10,10 @@ const Pagination = ({ pageContext }) => {
     numberOfPages,
   } = pageContext;
 
+  // Disable Pagination For now
+  return null;
+
+  // eslint-disable-next-line
   return (
     <nav className="pagination" role="navigation">
       <div>
