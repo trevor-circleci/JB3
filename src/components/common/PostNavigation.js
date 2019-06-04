@@ -13,8 +13,8 @@ import Img from "gatsby-image";
 
 const Outer = styled.div`
   box-shadow: 0 -0.5px 0 var(--color-border);
-  padding-top: 9vh;
-  margin-top: 10vh;
+  padding-top: 35px;
+  margin-top: 35px;
 `;
 
 const Container = styled.div`
