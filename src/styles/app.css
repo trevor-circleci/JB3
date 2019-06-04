@@ -412,9 +412,9 @@ dd {
 }
 
 blockquote {
-  margin: 0.3em 0 1.8em;
+  margin: 0.3em 0 1.8em -1em;
   padding: 0 1.6em 0 1.6em;
-  border-left: #cbeafb 0.5em solid;
+  border-left: var(--color-primary) 0.2em solid;
 }
 
 blockquote p {
@@ -654,6 +654,28 @@ h6 {
   background: var(--color-base);
   color: #fff;
   border-radius: 12px; */
+}
+
+.post-navigation-links {
+  display: flex;
+  align-items: center;
+  color: inherit;
+  transition: opacity 0.1s;
+  opacity: 0.8;
+}
+
+.post-navigation-links .left-icon {
+  margin-right: 1.3em;
+}
+
+.post-navigation-links .right-icon {
+  margin-left: 1.3em;
+  transform: rotate(180deg);
+}
+
+.post-navigation-links:hover {
+  text-decoration: none;
+  opacity: 1;
 }
 
 /* Header

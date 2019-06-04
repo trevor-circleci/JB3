@@ -2,8 +2,10 @@ import React from "react";
 import Prism from "prismjs";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
+import _ from "lodash";
 
 import { Layout } from "../components/common";
+import { PostNavigation } from "../components/common";
 import { MetaData } from "../components/common/meta";
 
 import "../styles/prism-tomorrow.css";
@@ -23,6 +25,8 @@ class Post extends React.Component {
   render() {
     const { data, location } = this.props;
     const post = data.ghostPost;
+    const posts = data.allGhostPost.edges;
+    const { next, previous } = _.find(posts, p => p.node.id === post.id);
 
     return (
       <>
@@ -45,6 +49,7 @@ class Post extends React.Component {
                 />
               </section>
             </article>
+            <PostNavigation nextPost={next} prevPost={previous} />
           </div>
         </Layout>
       </>
@@ -69,6 +74,19 @@ export const postQuery = graphql`
   query($slug: String!) {
     ghostPost(slug: { eq: $slug }) {
       ...GhostPostFields
+    }
+    allGhostPost(sort: { order: DESC, fields: [published_at] }) {
+      edges {
+        node {
+          ...GhostPostFields
+        }
+        previous {
+          ...GhostPostFields
+        }
+        next {
+          ...GhostPostFields
+        }
+      }
     }
   }
 `;
