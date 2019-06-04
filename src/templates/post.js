@@ -49,8 +49,8 @@ class Post extends React.Component {
                 />
               </section>
             </article>
-            <PostNavigation nextPost={next} prevPost={previous} />
           </div>
+          <PostNavigation nextPost={next} prevPost={previous} />
         </Layout>
       </>
     );

@@ -11,12 +11,16 @@ import styled from "@emotion/styled";
 import { Link, StaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 
+const Outer = styled.div`
+  box-shadow: 0 -0.5px 0 var(--color-border);
+  padding-top: 9vh;
+  margin-top: 10vh;
+`;
+
 const Container = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 0 -1em;
-  padding-top: 50px;
-  padding-bottom: 30px;
   padding-left: 1em;
   padding-right: 1em;
 `;
@@ -42,38 +46,42 @@ const Title = styled.div`
 `;
 
 const Navigation = ({ data, nextPost, prevPost }) => (
-  <Container>
-    <Left>
-      {prevPost && (
-        <Link to={`/${prevPost.slug}/`} className="post-navigation-links">
-          <Img
-            fixed={data.leftImage.childImageSharp.fixed}
-            alt="Previous Article"
-            className="left-icon"
-          />
-          <div>
-            <SubTitle>Previous</SubTitle>
-            <Title>{prevPost.title}</Title>
-          </div>
-        </Link>
-      )}
-    </Left>
-    <Right>
-      {nextPost && (
-        <Link to={`/${nextPost.slug}/`} className="post-navigation-links">
-          <div>
-            <SubTitle>Next</SubTitle>
-            <Title>{nextPost.title}</Title>
-          </div>
-          <Img
-            fixed={data.leftImage.childImageSharp.fixed}
-            alt="Next Article"
-            className="right-icon"
-          />
-        </Link>
-      )}
-    </Right>
-  </Container>
+  <Outer>
+    <div className="container">
+      <Container>
+        <Left>
+          {prevPost && (
+            <Link to={`/${prevPost.slug}/`} className="post-navigation-links">
+              <Img
+                fixed={data.leftImage.childImageSharp.fixed}
+                alt="Previous Article"
+                className="left-icon"
+              />
+              <div>
+                <SubTitle>Previous</SubTitle>
+                <Title>{prevPost.title}</Title>
+              </div>
+            </Link>
+          )}
+        </Left>
+        <Right>
+          {nextPost && (
+            <Link to={`/${nextPost.slug}/`} className="post-navigation-links">
+              <div>
+                <SubTitle>Next</SubTitle>
+                <Title>{nextPost.title}</Title>
+              </div>
+              <Img
+                fixed={data.leftImage.childImageSharp.fixed}
+                alt="Next Article"
+                className="right-icon"
+              />
+            </Link>
+          )}
+        </Right>
+      </Container>
+    </div>
+  </Outer>
 );
 
 Navigation.propTypes = {
