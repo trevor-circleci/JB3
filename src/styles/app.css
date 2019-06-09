@@ -664,6 +664,11 @@ h6 {
   opacity: 0.8;
 }
 
+.post-navigation-links .left-icon,
+.post-navigation-links .right-icon {
+  flex-shrink: 0;
+}
+
 .post-navigation-links .left-icon {
   margin-right: 1.3em;
 }
@@ -933,15 +938,17 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  text-align: center;
+}
+@media (max-width: 500px) {
+  .site-foot {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
 .site-foot a {
   color: var(--color-base);
-}
-
-.site-foot a:hover {
-  text-decoration: none;
-  color: rgba(255, 255, 255, 1);
 }
 
 .site-foot-right a {
