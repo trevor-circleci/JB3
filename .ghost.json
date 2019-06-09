@@ -1,6 +1,6 @@
 {
   "development": {
-    "apiUrl": "https://jb3ghost.serveo.net",
+    "apiUrl": "http://localhost:2368",
     "contentApiKey": "b516b7d9cd4a19609ebdd14c21"
   },
   "production": {
