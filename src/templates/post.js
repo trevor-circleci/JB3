@@ -59,8 +59,8 @@ class Post extends React.Component {
       return;
     }
 
+    // Wait for window.disqusID set in script tag in <head>
     setTimeout(() => {
-      console.log(this.props);
       this.setState({
         disqusID: window.disqusID || this.props.data.ghostPost.slug,
       });
