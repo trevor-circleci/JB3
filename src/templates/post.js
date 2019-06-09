@@ -5,6 +5,7 @@ import { graphql } from "gatsby";
 import _ from "lodash";
 import styled from "@emotion/styled";
 import { DiscussionEmbed, CommentCount } from "disqus-react";
+import reframe from "reframe.js";
 
 import * as colors from "../styles/colors";
 import { Layout } from "../components/common";
@@ -50,6 +51,13 @@ class Post extends React.Component {
 
   componentDidMount() {
     Prism.highlightAll();
+
+    // Try here to catch exception thrown when navigating to/from post page
+    try {
+      reframe(`iframe`);
+    } catch (e) {
+      return;
+    }
 
     setTimeout(() => {
       console.log(this.props);
