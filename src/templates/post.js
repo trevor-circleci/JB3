@@ -3,7 +3,10 @@ import Prism from "prismjs";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import _ from "lodash";
+import styled from "@emotion/styled";
+import { DiscussionEmbed, CommentCount } from "disqus-react";
 
+import * as colors from "../styles/colors";
 import { Layout } from "../components/common";
 import { PostNavigation } from "../components/common";
 import { MetaData } from "../components/common/meta";
@@ -17,16 +20,59 @@ import "../styles/prism-tomorrow.css";
  *
  */
 
+const LoadCommentsButton = styled.span`
+  display: block;
+  max-width: 170px;
+  text-align: center;
+  margin: 30px auto 50px;
+  color: ${colors.secondary};
+  border: 1px solid #c7d5d86e;
+  padding: 0px 15px;
+  font-size: 12px;
+  transition: all 0.3s;
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: none;
+    background-color: #c7d5d814;
+  }
+`;
+
 class Post extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      disqusID: null,
+      showComments: false,
+    };
+  }
+
   componentDidMount() {
     Prism.highlightAll();
+
+    setTimeout(() => {
+      console.log(this.props);
+      this.setState({
+        disqusID: window.disqusID || this.props.data.ghostPost.slug,
+      });
+    }, 1000);
   }
+
+  handleShowComments = () => {
+    this.setState({ showComments: true });
+  };
 
   render() {
     const { data, location } = this.props;
+    const { showComments, disqusID } = this.state;
     const post = data.ghostPost;
     const posts = data.allGhostPost.edges;
     const { next, previous } = _.find(posts, p => p.node.id === post.id);
+    const disqusConfig = {
+      shortname: process.env.GATSBY_DISQUS_NAME,
+      config: { identifier: disqusID, title: post.title },
+    };
 
     return (
       <>
@@ -47,6 +93,13 @@ class Post extends React.Component {
                   className="content-body load-external-scripts"
                   dangerouslySetInnerHTML={{ __html: post.html }}
                 />
+                {disqusID && !showComments && (
+                  <LoadCommentsButton onClick={this.handleShowComments}>
+                    <CommentCount {...disqusConfig}>Load Comments</CommentCount>
+                  </LoadCommentsButton>
+                )}
+
+                {showComments && <DiscussionEmbed {...disqusConfig} />}
               </section>
             </article>
           </div>
@@ -62,6 +115,7 @@ Post.propTypes = {
     ghostPost: PropTypes.shape({
       title: PropTypes.string.isRequired,
       html: PropTypes.string.isRequired,
+      slug: PropTypes.string.isRequired,
       feature_image: PropTypes.string,
     }).isRequired,
   }).isRequired,

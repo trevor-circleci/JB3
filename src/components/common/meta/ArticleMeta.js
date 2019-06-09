@@ -38,7 +38,6 @@ const ArticleMetaGhost = ({ data, settings, canonical }) => {
           content={ghostPost.meta_description || ghostPost.excerpt}
         />
         <link rel="canonical" href={canonical} />
-
         <meta property="og:site_name" content={settings.title} />
         <meta property="og:type" content="article" />
         <meta
@@ -67,7 +66,6 @@ const ArticleMetaGhost = ({ data, settings, canonical }) => {
         {author.facebookUrl && (
           <meta property="article:author" content={author.facebookUrl} />
         )}
-
         <meta
           name="twitter:title"
           content={
@@ -87,7 +85,6 @@ const ArticleMetaGhost = ({ data, settings, canonical }) => {
         <meta name="twitter:data1" content={author.name} />
         {primaryTag && <meta name="twitter:label2" content="Filed under" />}
         {primaryTag && <meta name="twitter:data2" content={primaryTag} />}
-
         {settings.twitter && (
           <meta
             name="twitter:site"
@@ -100,6 +97,7 @@ const ArticleMetaGhost = ({ data, settings, canonical }) => {
         {settings.twitter && (
           <meta name="twitter:creator" content={settings.twitter} />
         )}
+        <script>{`${ghostPost.codeinjection_head}`}</script>
         <script type="application/ld+json">{`
                     {
                         "@context": "https://schema.org/",
