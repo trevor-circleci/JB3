@@ -3,18 +3,20 @@ import { Link, navigate } from "gatsby";
 import { Layout } from "../components/common";
 
 const NotFoundPage = () => {
-  const isServerRendering = !!window;
+  try {
+    if (window) {
+      const path = window.location.pathname;
 
-  if (!isServerRendering) {
-    const path = window.location.pathname;
-
-    // Redirect /open/* -> /*
-    if (path.startsWith(`/open`)) {
-      useEffect(() => {
-        const newPath = window.location.pathname.replace(`/open`, ``);
-        navigate(newPath);
-      }, []);
+      // Redirect /open/* -> /*
+      if (path.startsWith(`/open`)) {
+        useEffect(() => {
+          const newPath = window.location.pathname.replace(`/open`, ``);
+          navigate(newPath);
+        }, []);
+      }
     }
+  } catch (error) {
+    console.log(error);
   }
 
   return (
