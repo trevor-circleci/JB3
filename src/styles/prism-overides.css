@@ -21,8 +21,8 @@ pre[class*="language-"] {
 /* Style inline */
 
 p > code {
-  background: #4a5058;
-  color: white;
+  background: #2980b91a;
+  color: #545454;
   padding: 3px 6px;
   font-size: 0.8em;
   line-height: 1em;
