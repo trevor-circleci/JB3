@@ -12,7 +12,13 @@ import { Layout } from "../components/common";
 import { PostNavigation } from "../components/common";
 import { MetaData } from "../components/common/meta";
 
-import "../styles/prism-tomorrow.css";
+// Prism: Syntax Highlighting
+import "../styles/prism-atom-dark.css";
+import "../styles/prism-overides.css";
+
+// Add all the tranforms we need
+import "prismjs/components/prism-bash.min.js";
+import "prismjs/components/prism-json.min.js";
 
 /**
  * Single post view (/:slug)

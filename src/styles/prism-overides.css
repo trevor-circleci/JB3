@@ -1,0 +1,19 @@
+/* Some Overides to Prism Styles */
+
+code[class*="language-"],
+pre[class*="language-"] {
+  font-size: 16px;
+  text-shadow: none;
+}
+
+pre[class*="language-"] {
+  padding: 1.5em;
+  margin: 0 0 1.5em 0;
+  border: none;
+  border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background: #282b2f;
+}
