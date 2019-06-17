@@ -17,3 +17,15 @@ pre[class*="language-"] {
 pre[class*="language-"] {
   background: #282b2f;
 }
+
+/* Style inline */
+
+p > code {
+  background: #4a5058;
+  color: white;
+  padding: 3px 6px;
+  font-size: 0.8em;
+  line-height: 1em;
+  border-radius: 3px;
+  white-space: pre-wrap;
+}
