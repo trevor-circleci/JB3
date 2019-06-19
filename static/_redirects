@@ -1,4 +1,0 @@
-# Netlify redirects file, edit with your domain
-# https://www.netlify.com/docs/redirects/
-/home              /
-/open/*      /:splat    301!
