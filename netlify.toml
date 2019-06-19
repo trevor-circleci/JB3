@@ -4,9 +4,3 @@
 
 [template]
   incoming-hooks = ["Ghost"]
-
-[[redirects]]
-  from = "/open/*"
-  to = "/:splat"
-  status= 301
-  force= true
