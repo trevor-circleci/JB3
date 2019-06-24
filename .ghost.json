@@ -1,10 +1,10 @@
 {
   "development": {
     "apiUrl": "http://localhost:2368",
-    "contentApiKey": "b516b7d9cd4a19609ebdd14c21"
+    "contentApiKey": "729086654d48e6bf0af2b7cb4b"
   },
   "production": {
     "apiUrl": "https://jb3ghost.serveo.net",
-    "contentApiKey": "b516b7d9cd4a19609ebdd14c21"
+    "contentApiKey": "729086654d48e6bf0af2b7cb4b"
   }
 }
