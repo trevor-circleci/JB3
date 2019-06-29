@@ -8,21 +8,27 @@ const Title = styled.div`
   font-size: 2.4rem;
 `;
 
-const Heading = styled.div`
+const Heading = styled.p`
   font-size: 1.5rem;
+  line-height: 1.5em;
   color: ${colors.secondary};
   margin-bottom: 10px;
 `;
 
 const Input = styled.input`
+  text-align: center;
   background-color: #f3f8fb;
-  width: 50%;
   padding: 15px 20px;
   font-size: 1.5rem;
+  width: 100%;
 
   ::placeholder {
     color: ${colors.secondary};
     font-size: 1.3rem;
+  }
+
+  @media screen and (min-width: 576px) {
+    width: 70%;
   }
 `;
 
@@ -32,6 +38,7 @@ const Form = styled.form`
   align-items: center;
   box-shadow: 0 0 1px ${colors.border};
   padding: 2rem;
+  text-align: center;
 `;
 
 const Error = styled.div`
