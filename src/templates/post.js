@@ -8,8 +8,7 @@ import { DiscussionEmbed, CommentCount } from "disqus-react";
 import reframe from "reframe.js";
 
 import * as colors from "../styles/colors";
-import { Layout } from "../components/common";
-import { PostNavigation } from "../components/common";
+import { Layout, PostNavigation, SubscribeForm } from "../components/common";
 import { MetaData } from "../components/common/meta";
 
 // Prism: Syntax Highlighting
@@ -114,6 +113,8 @@ class Post extends React.Component {
                 )}
 
                 {showComments && <DiscussionEmbed {...disqusConfig} />}
+
+                <SubscribeForm />
               </section>
             </article>
           </div>

@@ -1,2 +1,3 @@
-export const border = `#c7d5d8`;
-export const secondary = `#a4b0be`;
+export const border = `#C7D5D8`;
+export const secondary = `#A4B0BE`;
+export const red = `#E74C3C`;

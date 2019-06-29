@@ -186,6 +186,12 @@ module.exports = {
         trackingId: process.env.GA_TRACKING_ID,
       },
     },
+    {
+      resolve: `gatsby-plugin-mailchimp`,
+      options: {
+        endpoint: `https://masterylifeapp.us15.list-manage.com/subscribe/post?u=df48096ccab82ad6b4734e8fb&amp;id=d737f9a85e`,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-force-trailing-slashes`,
     `gatsby-plugin-offline`,
