@@ -4,6 +4,16 @@ import addToMailchimp from "gatsby-plugin-mailchimp";
 
 import * as colors from "../../styles/colors";
 
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 1px ${colors.border};
+  padding: 2rem;
+  text-align: center;
+  margin-top: 20px;
+`;
+
 const Title = styled.div`
   font-size: 2.4rem;
 `;
@@ -30,15 +40,6 @@ const Input = styled.input`
   @media screen and (min-width: 576px) {
     width: 70%;
   }
-`;
-
-const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: 0 0 1px ${colors.border};
-  padding: 2rem;
-  text-align: center;
 `;
 
 const Error = styled.div`

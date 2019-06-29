@@ -30,7 +30,7 @@ const LoadCommentsButton = styled.span`
   display: block;
   max-width: 170px;
   text-align: center;
-  margin: 30px auto 50px;
+  margin: 50px auto;
   color: ${colors.secondary};
   border: 1px solid #c7d5d86e;
   padding: 0px 15px;
@@ -106,6 +106,8 @@ class Post extends React.Component {
                   className="content-body load-external-scripts"
                   dangerouslySetInnerHTML={{ __html: post.html }}
                 />
+                <SubscribeForm />
+
                 {disqusID && !showComments && (
                   <LoadCommentsButton onClick={this.handleShowComments}>
                     <CommentCount {...disqusConfig}>Load Comments</CommentCount>
@@ -113,8 +115,6 @@ class Post extends React.Component {
                 )}
 
                 {showComments && <DiscussionEmbed {...disqusConfig} />}
-
-                <SubscribeForm />
               </section>
             </article>
           </div>
