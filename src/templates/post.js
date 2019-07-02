@@ -19,6 +19,10 @@ import "../styles/prism-overides.css";
 import "prismjs/components/prism-bash.min.js";
 import "prismjs/components/prism-json.min.js";
 
+// Plugins
+import "prismjs/plugins/line-highlight/prism-line-highlight.min.js";
+import "prismjs/plugins/line-highlight/prism-line-highlight.css";
+
 /**
  * Single post view (/:slug)
  *
@@ -54,7 +58,33 @@ class Post extends React.Component {
     };
   }
 
+  applyLineHighlights(node) {
+    const regex = /^\/\/\sLineHighlight:\s.*$/gm;
+    let lineCode = ``;
+    node.innerHTML = node.innerHTML
+      .split(`\n`)
+      .filter(line => (line.match(regex) ? !(lineCode = line) : true))
+      .join(`\n`);
+
+    // Parse line - extract param value
+    lineCode = lineCode.match(/(?<=\/\/\sLineHighlight:\s)(.*)(?=;)/);
+
+    // Add data-line attribute
+    if (lineCode) {
+      node.closest(`pre`).dataset.line = lineCode[0];
+    }
+  }
+
+  parseLineHighlight() {
+    // Select all pre/code
+    document
+      .querySelectorAll(`code[class*="language-"]`)
+      // see if there's '// LineHighlight: 1;'
+      .forEach(node => this.applyLineHighlights(node));
+  }
+
   componentDidMount() {
+    this.parseLineHighlight();
     Prism.highlightAll();
 
     // Try here to catch exception thrown when navigating to/from post page

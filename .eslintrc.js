@@ -37,6 +37,7 @@ module.exports = {
       "as-needed",
       { requireReturnForObjectLiteral: true },
     ],
+    "no-confusing-arrow": "off",
     "arrow-parens": ["error", "as-needed"],
     "jsx-quotes": ["error", "prefer-double"],
     semi: ["error", "always"],

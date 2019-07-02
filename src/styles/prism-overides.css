@@ -1,4 +1,7 @@
 /* Some Overides to Prism Styles */
+:root {
+  --prism-padding: 1.5em;
+}
 
 code[class*="language-"],
 pre[class*="language-"] {
@@ -7,8 +10,8 @@ pre[class*="language-"] {
 }
 
 pre[class*="language-"] {
-  padding: 1.5em;
-  margin: 0 0 1.5em 0;
+  padding: var(--prism-padding);
+  margin: 0 0 var(--prism-padding) 0;
   border: none;
   border-radius: 0.3em;
 }
@@ -28,4 +31,25 @@ p > code {
   line-height: 1em;
   border-radius: 3px;
   white-space: pre-wrap;
+}
+
+/* Data Line Plugin */
+pre[data-line] {
+  padding: var(--prism-padding) !important;
+}
+
+.line-highlight {
+  margin-top: var(--prism-padding) !important;
+  padding-top: 2px;
+  background: hsla(24, 20%, 50%, 0.08);
+  background: linear-gradient(
+    to right,
+    hsla(215, 14%, 33%, 0.2) 70%,
+    hsla(215, 14%, 33%, 0)
+  ) !important;
+}
+
+.line-highlight:before,
+.line-highlight[data-end]:after {
+  display: none;
 }
