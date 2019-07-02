@@ -58,7 +58,7 @@ class Post extends React.Component {
     };
   }
 
-  applyLineHighlights(node) {
+  parseLineHighlights(node) {
     const regex = /^\/\/\sLineHighlight:\s.*$/gm;
     let lineCode = ``;
     node.innerHTML = node.innerHTML
@@ -75,17 +75,15 @@ class Post extends React.Component {
     }
   }
 
-  parseLineHighlight() {
-    // Select all pre/code
+  componentDidMount() {
     document
       .querySelectorAll(`code[class*="language-"]`)
-      // see if there's '// LineHighlight: 1;'
-      .forEach(node => this.applyLineHighlights(node));
-  }
+      .forEach(node => this.parseLineHighlights(node));
 
-  componentDidMount() {
-    this.parseLineHighlight();
-    Prism.highlightAll();
+    // Delay To give plugin parsing call time
+    setTimeout(() => {
+      Prism.highlightAll();
+    }, 1000);
 
     // Try here to catch exception thrown when navigating to/from post page
     try {
