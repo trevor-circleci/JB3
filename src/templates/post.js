@@ -16,6 +16,7 @@ import "../styles/prism-atom-dark.css";
 import "../styles/prism-overides.css";
 
 // Add all the tranforms we need
+import "../scripts/line-highlight-parser.js";
 import "prismjs/components/prism-bash.min.js";
 import "prismjs/components/prism-json.min.js";
 
@@ -58,33 +59,8 @@ class Post extends React.Component {
     };
   }
 
-  parseLineHighlights(node) {
-    const regex = /^\/\/\sLineHighlight:\s.*$/gm;
-    let lineCode = ``;
-    node.innerHTML = node.innerHTML
-      .split(`\n`)
-      .filter(line => (line.match(regex) ? !(lineCode = line) : true))
-      .join(`\n`);
-
-    // Parse line - extract param value
-    lineCode = lineCode.match(/(?<=\/\/\sLineHighlight:\s)(.*)(?=;)/);
-
-    // Add data-line attribute
-    if (lineCode) {
-      node.closest(`pre`).dataset.line = lineCode[0];
-    }
-  }
-
   componentDidMount() {
-    document
-      .querySelectorAll(`code[class*="language-"]`)
-      .forEach(node => this.parseLineHighlights(node));
-
-    // Delay To give plugin parsing call time
-    setTimeout(() => {
-      Prism.highlightAll();
-    }, 1000);
-
+    Prism.highlightAll();
     // Try here to catch exception thrown when navigating to/from post page
     try {
       reframe(`iframe`);
