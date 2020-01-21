@@ -99,7 +99,7 @@ class Post extends React.Component {
             <article className="content">
               <h1 className="content-title">{post.title}</h1>
               {post.feature_image ? (
-                <figure className="post-feature-image">
+                <figure className="post-feature-image full-width">
                   <img src={post.feature_image} alt={post.title} />
                 </figure>
               ) : null}
