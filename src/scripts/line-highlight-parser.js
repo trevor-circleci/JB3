@@ -18,11 +18,12 @@
       .join(`\n`);
 
     // Parse line - extract param value
-    lineCode = lineCode.match(/(?<=\/\/\sLineHighlight:\s)(.*)(?=;)/);
+    lineCode = lineCode.match(/\/\/\sLineHighlight:\s(.*)(?=;)/);
+    lineCode = lineCode ? lineCode[1] : null;
 
     // Add data-line attribute
     if (lineCode) {
-      env.element.closest(`pre`).dataset.line = lineCode[0];
+      env.element.closest(`pre`).dataset.line = lineCode;
     }
   });
 })();
