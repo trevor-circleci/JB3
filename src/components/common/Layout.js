@@ -61,7 +61,7 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                 <Link to="/">{site.title}</Link>
               </div>
               <div className="site-foot-right">
-                © 2019 &mdash; Build with ♥ in
+                © {new Date().getFullYear()} &mdash; Build with ♥ in
                 <a href="https://www.instagram.com/stmaartentourism/">
                   St.Maarten
                 </a>
