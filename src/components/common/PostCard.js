@@ -3,10 +3,18 @@ import PropTypes from "prop-types";
 import { Link } from "gatsby";
 import { Tags } from "@tryghost/helpers-gatsby";
 import moment from "moment";
+import { CommentCount } from "disqus-react";
 
 const PostCard = ({ post }) => {
   const url = `/${post.slug}/`;
   const posted = moment(post.published_at, `YYYYMMDD`).fromNow();
+
+  const disqusID =
+    post.codeinjection_head && post.codeinjection_head.replace(/\D/g, ``);
+  const disqusConfig = {
+    shortname: process.env.GATSBY_DISQUS_NAME,
+    config: { identifier: disqusID, title: post.title },
+  };
 
   return (
     <Link to={url} className="post-card">
@@ -21,6 +29,12 @@ const PostCard = ({ post }) => {
               autolink={false}
               classes="post-card-tags-link"
             />
+            {disqusID && (
+              <>
+                {` `}|{` `}
+                <CommentCount {...disqusConfig} />
+              </>
+            )}
           </div>
         )}
       </header>
