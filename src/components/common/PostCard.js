@@ -32,7 +32,9 @@ const PostCard = ({ post }) => {
             {disqusID && (
               <>
                 {` `}|{` `}
-                <CommentCount {...disqusConfig} />
+                <span className="post-card-comment-count">
+                  <CommentCount {...disqusConfig} />
+                </span>
               </>
             )}
           </div>

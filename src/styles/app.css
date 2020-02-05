@@ -587,6 +587,7 @@ h6 {
 }
 
 .content-title {
+  text-align: center;
   margin: 0 0 0.8em;
   font-size: 5rem;
 }
@@ -792,10 +793,19 @@ h6 {
   line-height: 1.15em;
   color: var(--color-secondary);
 }
+@media (max-width: 500px) {
+  .post-card-tags {
+    line-height: 1.45em;
+  }
+}
 
 .post-card-tags-link {
   color: var(--color-primary);
   font-weight: 500;
+}
+
+.post-card-comment-count {
+  white-space: nowrap;
 }
 
 .post-card-title {
