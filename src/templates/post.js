@@ -7,6 +7,7 @@ import styled from "@emotion/styled";
 import { DiscussionEmbed, CommentCount } from "disqus-react";
 import reframe from "reframe.js";
 
+import getDisqusId from "../utils/getDisqusId";
 import * as colors from "../styles/colors";
 import { Layout, PostNavigation, SubscribeForm } from "../components/common";
 import { MetaData } from "../components/common/meta";
@@ -68,12 +69,9 @@ class Post extends React.Component {
       return;
     }
 
-    // Wait for window.disqusID set in script tag in <head>
-    setTimeout(() => {
-      this.setState({
-        disqusID: window.disqusID || this.props.data.ghostPost.slug,
-      });
-    }, 1000);
+    this.setState({
+      disqusID: getDisqusId(this.props.data.ghostPost),
+    });
   }
 
   handleShowComments = () => {

@@ -5,12 +5,12 @@ import { Tags } from "@tryghost/helpers-gatsby";
 import moment from "moment";
 import { CommentCount } from "disqus-react";
 
+import getDisqusId from "../../utils/getDisqusId";
+
 const PostCard = ({ post }) => {
   const url = `/${post.slug}/`;
   const posted = moment(post.published_at, `YYYYMMDD`).fromNow();
-
-  const disqusID =
-    post.codeinjection_head && post.codeinjection_head.replace(/\D/g, ``);
+  const disqusID = getDisqusId(post);
   const disqusConfig = {
     shortname: process.env.GATSBY_DISQUS_NAME,
     config: { identifier: disqusID, title: post.title },
