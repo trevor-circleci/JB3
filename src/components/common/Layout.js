@@ -5,7 +5,7 @@ import { Link, StaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 
 // Styles
-import "../../styles/app.css";
+import "../../styles/app.scss";
 
 /**
  * Main layout component

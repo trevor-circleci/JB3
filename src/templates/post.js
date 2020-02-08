@@ -6,6 +6,7 @@ import _ from "lodash";
 import styled from "@emotion/styled";
 import { DiscussionEmbed, CommentCount } from "disqus-react";
 import reframe from "reframe.js";
+import ReactTooltip from "react-tooltip";
 
 import getDisqusId from "../utils/getDisqusId";
 import * as colors from "../styles/colors";
@@ -129,6 +130,7 @@ class Post extends React.Component {
           </div>
           <PostNavigation nextPost={next} prevPost={previous} />
         </Layout>
+        <ReactTooltip type="info" />
       </>
     );
   }

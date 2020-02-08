@@ -56,15 +56,18 @@
     "gatsby-plugin-manifest": "2.1.1",
     "gatsby-plugin-offline": "2.1.1",
     "gatsby-plugin-react-helmet": "3.0.12",
+    "gatsby-plugin-sass": "^2.1.28",
     "gatsby-plugin-sharp": "2.0.37",
     "gatsby-source-filesystem": "2.0.37",
     "gatsby-source-ghost": "3.3.3",
     "gatsby-transformer-sharp": "2.1.19",
     "lodash": "4.17.11",
+    "node-sass": "^4.13.1",
     "prismjs": "^1.16.0",
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "react-helmet": "5.2.1",
+    "react-tooltip": "^4.0.0",
     "reframe.js": "^2.2.5"
   }
 }
