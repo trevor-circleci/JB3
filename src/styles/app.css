@@ -669,6 +669,10 @@ h6 {
   border-radius: 12px; */
 }
 
+.content-body.content-exerpt {
+  text-align: center;
+}
+
 .post-navigation-links {
   display: flex;
   align-items: center;
