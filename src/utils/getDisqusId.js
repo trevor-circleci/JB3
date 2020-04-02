@@ -1,5 +1,5 @@
 export default post => {
-  let disqusID = window.getDisqusId;
+  let disqusID = typeof window !== `undefined` && window.getDisqusId;
 
   if (!disqusID) {
     disqusID =
