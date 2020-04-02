@@ -8,13 +8,13 @@ let ghostConfig;
 try {
   ghostConfig = require(`./.ghost`);
 } catch (e) {
-  ghostConfig = {
-    production: {
-      apiUrl: process.env.GHOST_API_URL,
-      contentApiKey: process.env.GHOST_CONTENT_API_KEY,
-    },
-  };
+  console.log(`No .ghost config found`);
 } finally {
+  ghostConfig.production = {
+    apiUrl: process.env.GHOST_API_URL,
+    contentApiKey: process.env.GHOST_CONTENT_API_KEY,
+  };
+
   const { apiUrl, contentApiKey } =
     process.env.NODE_ENV === `development`
       ? ghostConfig.development

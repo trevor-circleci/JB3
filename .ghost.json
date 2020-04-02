@@ -2,9 +2,5 @@
   "development": {
     "apiUrl": "http://localhost:2368",
     "contentApiKey": "729086654d48e6bf0af2b7cb4b"
-  },
-  "production": {
-    "apiUrl": "https://josebrowne.tunnel.datahub.at",
-    "contentApiKey": "729086654d48e6bf0af2b7cb4b"
   }
 }
