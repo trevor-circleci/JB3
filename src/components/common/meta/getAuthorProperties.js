@@ -1,7 +1,7 @@
 import _ from "lodash";
 import PropTypes from "prop-types";
 
-export const getAuthorProperties = (primaryAuthor) => {
+export const getAuthorProperties = primaryAuthor => {
   let authorProfiles = [];
 
   authorProfiles.push(

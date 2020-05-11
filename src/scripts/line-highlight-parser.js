@@ -1,5 +1,5 @@
 /* global Prism */
-(function() {
+(function () {
   if (
     typeof self === `undefined` ||
     !self.Prism ||
@@ -9,7 +9,7 @@
     return;
   }
 
-  Prism.hooks.add(`before-highlight`, function(env) {
+  Prism.hooks.add(`before-highlight`, function (env) {
     const regex = /^\/\/\sLineHighlight:\s.*$/gm;
     let lineCode = ``;
     env.code = env.code
