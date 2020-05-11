@@ -1,9 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
+import styled from "@emotion/styled";
 
 import { Layout, PostCard, Pagination } from "../components/common";
 import { MetaData } from "../components/common/meta";
+
+const Link = styled.a`
+  text-align: center;
+  display: block;
+`;
 
 /**
  * Main index page (home page)
@@ -15,6 +21,7 @@ import { MetaData } from "../components/common/meta";
  */
 const Index = ({ data, location, pageContext }) => {
   const posts = data.allGhostPost.edges;
+  const [showCount, increseShowCount] = React.useState(5);
 
   return (
     <>
@@ -25,11 +32,21 @@ const Index = ({ data, location, pageContext }) => {
             <h2 className="post-feed-header">Latest Posts</h2>
           </div>
           <section className="post-feed">
-            {posts.map(({ node }) => (
+            {posts.map(
+              ({ node }, index) => index < showCount && (
               // The tag below includes the markup for each post - components/common/PostCard.js
-              <PostCard key={node.id} post={node} />
-            ))}
+                <PostCard key={node.id} post={node} />
+              )
+            )}
           </section>
+          {showCount < posts.length && (
+            <Link
+              href="javascript:;"
+              onClick={() => increseShowCount(showCount + 5)}
+            >
+              show more
+            </Link>
+          )}
           <Pagination pageContext={pageContext} />
         </div>
       </Layout>
