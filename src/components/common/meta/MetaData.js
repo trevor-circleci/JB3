@@ -1,12 +1,12 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { StaticQuery, graphql } from "gatsby";
-import url from "url";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { StaticQuery, graphql } from 'gatsby';
+import url from 'url';
 
-import config from "../../../utils/siteConfig";
-import ArticleMeta from "./ArticleMeta";
-import WebsiteMeta from "./WebsiteMeta";
-import AuthorMeta from "./AuthorMeta";
+import config from '../../../utils/siteConfig';
+import ArticleMeta from './ArticleMeta';
+import WebsiteMeta from './WebsiteMeta';
+import AuthorMeta from './AuthorMeta';
 
 /**
  * MetaData will generate all relevant meta data information incl.

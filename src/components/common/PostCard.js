@@ -1,11 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Link } from "gatsby";
-import { Tags } from "@tryghost/helpers-gatsby";
-import moment from "moment";
-import { CommentCount } from "disqus-react";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
+import { Tags } from '@tryghost/helpers-gatsby';
+import moment from 'moment';
+import { CommentCount } from 'disqus-react';
 
-import getDisqusId from "../../utils/getDisqusId";
+import getDisqusId from '../../utils/getDisqusId';
 
 const PostCard = ({ post }) => {
   const url = `/${post.slug}/`;
@@ -57,7 +57,7 @@ PostCard.propTypes = {
     tags: PropTypes.arrayOf(
       PropTypes.shape({
         name: PropTypes.string,
-      })
+      }),
     ),
     excerpt: PropTypes.string.isRequired,
     primary_author: PropTypes.shape({

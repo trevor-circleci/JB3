@@ -1,30 +1,30 @@
-import React from "react";
-import Prism from "prismjs";
-import PropTypes from "prop-types";
-import { graphql } from "gatsby";
-import _ from "lodash";
-import styled from "@emotion/styled";
-import { DiscussionEmbed, CommentCount } from "disqus-react";
-import reframe from "reframe.js";
-import ReactTooltip from "react-tooltip";
+import React from 'react';
+import Prism from 'prismjs';
+import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
+import _ from 'lodash';
+import styled from '@emotion/styled';
+import { DiscussionEmbed, CommentCount } from 'disqus-react';
+import reframe from 'reframe.js';
+import ReactTooltip from 'react-tooltip';
 
-import getDisqusId from "../utils/getDisqusId";
-import * as colors from "../styles/colors";
-import { Layout, PostNavigation, SubscribeForm } from "../components/common";
-import { MetaData } from "../components/common/meta";
+import getDisqusId from '../utils/getDisqusId';
+import * as colors from '../styles/colors';
+import { Layout, PostNavigation, SubscribeForm } from '../components/common';
+import { MetaData } from '../components/common/meta';
 
 // Prism: Syntax Highlighting
-import "../styles/prism-atom-dark.css";
-import "../styles/prism-overides.css";
+import '../styles/prism-atom-dark.css';
+import '../styles/prism-overides.css';
 
 // Add all the tranforms we need
-import "../scripts/line-highlight-parser.js";
-import "prismjs/components/prism-bash.min.js";
-import "prismjs/components/prism-json.min.js";
+import '../scripts/line-highlight-parser.js';
+import 'prismjs/components/prism-bash.min.js';
+import 'prismjs/components/prism-json.min.js';
 
 // Plugins
-import "prismjs/plugins/line-highlight/prism-line-highlight.min.js";
-import "prismjs/plugins/line-highlight/prism-line-highlight.css";
+import 'prismjs/plugins/line-highlight/prism-line-highlight.min.js';
+import 'prismjs/plugins/line-highlight/prism-line-highlight.css';
 
 /**
  * Single post view (/:slug)

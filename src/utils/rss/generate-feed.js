@@ -17,7 +17,7 @@ const generateItem = function generateItem(post) {
     date: post.published_at,
     categories: _.map(
       tagsHelper(post, { visibility: `public`, fn: tag => tag }),
-      `name`
+      `name`,
     ),
     author: post.primary_author ? post.primary_author.name : null,
     custom_elements: [],
@@ -29,7 +29,7 @@ const generateItem = function generateItem(post) {
 
     // Add a media content tag
     item.custom_elements.push({
-      "media:content": {
+      'media:content': {
         _attr: {
           url: imageUrl,
           medium: `image`,
@@ -45,7 +45,7 @@ const generateItem = function generateItem(post) {
   }
 
   item.custom_elements.push({
-    "content:encoded": {
+    'content:encoded': {
       _cdata: htmlContent.html(),
     },
   });
@@ -54,8 +54,10 @@ const generateItem = function generateItem(post) {
 
 const generateRSSFeed = function generateRSSFeed(siteConfig) {
   return {
-    serialize: ({ query: { allGhostPost } }) => allGhostPost.edges.map(edge => Object.assign({}, generateItem(edge.node))
-    ),
+    serialize: ({ query: { allGhostPost } }) =>
+      allGhostPost.edges.map(edge =>
+        Object.assign({}, generateItem(edge.node)),
+      ),
     setup: ({ query: { allGhostSettings } }) => {
       const siteTitle = allGhostSettings.edges[0].node.title || `No Title`;
       const siteDescription =

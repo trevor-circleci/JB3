@@ -1,12 +1,12 @@
-import React from "react";
-import Helmet from "react-helmet";
-import PropTypes from "prop-types";
-import _ from "lodash";
-import { StaticQuery, graphql } from "gatsby";
+import React from 'react';
+import Helmet from 'react-helmet';
+import PropTypes from 'prop-types';
+import _ from 'lodash';
+import { StaticQuery, graphql } from 'gatsby';
 
-import ImageMeta from "./ImageMeta";
-import getAuthorProperties from "./getAuthorProperties";
-import config from "../../../utils/siteConfig";
+import ImageMeta from './ImageMeta';
+import getAuthorProperties from './getAuthorProperties';
+import config from '../../../utils/siteConfig';
 
 const AuthorMeta = ({ data, settings, canonical }) => {
   settings = settings.allGhostSettings.edges[0].node;
@@ -36,7 +36,7 @@ const AuthorMeta = ({ data, settings, canonical }) => {
             name="twitter:site"
             content={`https://twitter.com/${settings.twitter.replace(
               /^@/,
-              ``
+              ``,
             )}/`}
           />
         )}

@@ -5,11 +5,11 @@
  * Show prev/next buttons to make navigating between components easy
  *
  */
-import React from "react";
-import PropTypes from "prop-types";
-import styled from "@emotion/styled";
-import { Link, StaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from '@emotion/styled';
+import { Link, StaticQuery, graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
 const Outer = styled.div`
   box-shadow: 0 -0.5px 0 var(--color-border);

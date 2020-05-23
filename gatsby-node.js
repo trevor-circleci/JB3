@@ -69,7 +69,7 @@ exports.createPages = ({ graphql, actions }) => {
         });
 
         return resolve();
-      })
+      }),
     );
   });
 
@@ -146,7 +146,7 @@ exports.createPages = ({ graphql, actions }) => {
         });
 
         return resolve();
-      })
+      }),
     );
   });
 
@@ -222,7 +222,7 @@ exports.createPages = ({ graphql, actions }) => {
           });
         });
         return resolve();
-      })
+      }),
     );
   });
 
@@ -271,7 +271,7 @@ exports.createPages = ({ graphql, actions }) => {
         });
 
         return resolve();
-      })
+      }),
     );
   });
 

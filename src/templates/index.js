@@ -1,10 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { graphql } from "gatsby";
-import styled from "@emotion/styled";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
+import styled from '@emotion/styled';
 
-import { Layout, PostCard, Pagination } from "../components/common";
-import { MetaData } from "../components/common/meta";
+import { Layout, PostCard, Pagination } from '../components/common';
+import { MetaData } from '../components/common/meta';
 
 const Link = styled.a`
   text-align: center;
@@ -33,10 +33,11 @@ const Index = ({ data, location, pageContext }) => {
           </div>
           <section className="post-feed">
             {posts.map(
-              ({ node }, index) => index < showCount && (
-              // The tag below includes the markup for each post - components/common/PostCard.js
-                <PostCard key={node.id} post={node} />
-              )
+              ({ node }, index) =>
+                index < showCount && (
+                  // The tag below includes the markup for each post - components/common/PostCard.js
+                  <PostCard key={node.id} post={node} />
+                ),
             )}
           </section>
           {showCount < posts.length && (

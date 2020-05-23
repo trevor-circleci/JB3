@@ -1,9 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { graphql } from "gatsby";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
 
-import { Layout, PostCard, Pagination } from "../components/common";
-import { MetaData } from "../components/common/meta";
+import { Layout, PostCard, Pagination } from '../components/common';
+import { MetaData } from '../components/common/meta';
 
 /**
  * Author page (/author/:slug)

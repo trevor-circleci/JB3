@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Link } from "gatsby";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
 
 /**
  * Navigation component
@@ -47,7 +47,7 @@ Navigation.propTypes = {
     PropTypes.shape({
       label: PropTypes.string.isRequired,
       url: PropTypes.string.isRequired,
-    }).isRequired
+    }).isRequired,
   ).isRequired,
   navClass: PropTypes.string,
 };

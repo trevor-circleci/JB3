@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "@emotion/styled";
-import addToMailchimp from "gatsby-plugin-mailchimp";
+import React from 'react';
+import styled from '@emotion/styled';
+import addToMailchimp from 'gatsby-plugin-mailchimp';
 
-import * as colors from "../../styles/colors";
+import * as colors from '../../styles/colors';
 
 const Form = styled.form`
   display: flex;

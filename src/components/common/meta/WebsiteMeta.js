@@ -1,12 +1,12 @@
-import React from "react";
-import Helmet from "react-helmet";
-import PropTypes from "prop-types";
-import _ from "lodash";
-import { StaticQuery, graphql } from "gatsby";
-import url from "url";
+import React from 'react';
+import Helmet from 'react-helmet';
+import PropTypes from 'prop-types';
+import _ from 'lodash';
+import { StaticQuery, graphql } from 'gatsby';
+import url from 'url';
 
-import ImageMeta from "./ImageMeta";
-import config from "../../../utils/siteConfig";
+import ImageMeta from './ImageMeta';
+import config from '../../../utils/siteConfig';
 
 const WebsiteMeta = ({
   data,
@@ -21,7 +21,7 @@ const WebsiteMeta = ({
 
   const publisherLogo = url.resolve(
     config.siteUrl,
-    settings.logo || config.siteIcon
+    settings.logo || config.siteIcon,
   );
   let shareImage =
     image || data.feature_image || _.get(settings, `cover_image`, null);
@@ -57,7 +57,7 @@ const WebsiteMeta = ({
             name="twitter:site"
             content={`https://twitter.com/${settings.twitter.replace(
               /^@/,
-              ``
+              ``,
             )}/`}
           />
         )}

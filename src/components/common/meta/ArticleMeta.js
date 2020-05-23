@@ -1,15 +1,15 @@
-import React from "react";
-import Helmet from "react-helmet";
-import { StaticQuery, graphql } from "gatsby";
-import PropTypes from "prop-types";
-import _ from "lodash";
-import url from "url";
+import React from 'react';
+import Helmet from 'react-helmet';
+import { StaticQuery, graphql } from 'gatsby';
+import PropTypes from 'prop-types';
+import _ from 'lodash';
+import url from 'url';
 
-import getAuthorProperties from "./getAuthorProperties";
-import ImageMeta from "./ImageMeta";
-import config from "../../../utils/siteConfig";
+import getAuthorProperties from './getAuthorProperties';
+import ImageMeta from './ImageMeta';
+import config from '../../../utils/siteConfig';
 
-import { tags as tagsHelper } from "@tryghost/helpers";
+import { tags as tagsHelper } from '@tryghost/helpers';
 
 const ArticleMetaGhost = ({ data, settings, canonical }) => {
   const ghostPost = data;
@@ -18,7 +18,7 @@ const ArticleMetaGhost = ({ data, settings, canonical }) => {
   const author = getAuthorProperties(ghostPost.primary_author);
   const publicTags = _.map(
     tagsHelper(ghostPost, { visibility: `public`, fn: tag => tag }),
-    `name`
+    `name`,
   );
   const primaryTag = publicTags[0] || ``;
   const shareImage = ghostPost.feature_image
@@ -90,7 +90,7 @@ const ArticleMetaGhost = ({ data, settings, canonical }) => {
             name="twitter:site"
             content={`https://twitter.com/${settings.twitter.replace(
               /^@/,
-              ``
+              ``,
             )}/`}
           />
         )}
@@ -176,7 +176,7 @@ ArticleMetaGhost.propTypes = {
         name: PropTypes.string,
         slug: PropTypes.string,
         visibility: PropTypes.string,
-      })
+      }),
     ),
     primaryTag: PropTypes.shape({
       name: PropTypes.string,

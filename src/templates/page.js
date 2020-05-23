@@ -1,9 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { graphql } from "gatsby";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
 
-import { Layout } from "../components/common";
-import { MetaData } from "../components/common/meta";
+import { Layout } from '../components/common';
+import { MetaData } from '../components/common/meta';
 
 /**
  * Single page (/:slug)
