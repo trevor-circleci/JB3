@@ -70,9 +70,19 @@ class Post extends React.Component {
       return;
     }
 
-    this.setState({
-      disqusID: getDisqusId(this.props.data.ghostPost),
-    });
+    this.setState(
+      {
+        disqusID: getDisqusId(this.props.data.ghostPost),
+      },
+      () => {
+        if (
+          window.location.hash &&
+          window.location.hash.includes('#comment-')
+        ) {
+          this.handleShowComments();
+        }
+      },
+    );
   }
 
   handleShowComments = () => {
