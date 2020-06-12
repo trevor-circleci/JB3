@@ -53,6 +53,7 @@ const Title = styled.div`
 
 const P = styled.div`
   line-height: 1.4;
+  opacity: 0.8;
 `;
 
 const Component = ({ data }) => (
