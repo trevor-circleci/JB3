@@ -51,6 +51,12 @@ const LoadCommentsButton = styled.span`
   }
 `;
 
+const Date = styled.p`
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-align: center;
+`;
+
 class Post extends React.Component {
   constructor() {
     super();
@@ -112,6 +118,7 @@ class Post extends React.Component {
                   <img src={post.feature_image} alt={post.title} />
                 </figure>
               ) : null}
+              <Date>{post.published_at_pretty}</Date>
               <section className="post-full-content">
                 {post.excerpt ? (
                   <>
