@@ -8,6 +8,7 @@ const Wrapper = styled.div`
   display: flex;
   padding: 2rem;
   margin-top: 20px;
+  margin-bottom: 100px;
   border-radius: 5px;
   border: 1px solid rgba(11, 99, 167, 0.1);
 
@@ -64,13 +65,14 @@ const Component = ({ data }) => (
       <P>
         Application Developer • Engineering Manager • Designer • Instructor •
         Writer • Formerly @Sosh (Acquired By @Postmates) • Generally an
-        optimist. Reach me @
+        optimist. <br />
+        <br /> Reach me
         <a
           href="https://twitter.com/JoseBrowneX"
           target="_blank"
           rel="noopener noreferrer"
         >
-          JoseBrowneX
+          @JoseBrowneX
         </a>
       </P>
     </Right>

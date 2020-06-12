@@ -42,7 +42,7 @@ const LoadCommentsButton = styled.span`
   display: block;
   max-width: 170px;
   text-align: center;
-  margin: 50px auto;
+  margin: 50px auto 90px;
   color: ${colors.secondary};
   border: 1px solid #c7d5d86e;
   padding: 0px 15px;

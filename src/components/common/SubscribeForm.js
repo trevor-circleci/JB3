@@ -20,14 +20,14 @@ const Form = styled.form`
 `;
 
 const Title = styled.div`
-  font-size: 2.4rem;
+  font-size: 2.2rem;
 `;
 
 const Heading = styled.p`
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   line-height: 1.5em;
   color: ${colors.secondary};
-  margin-bottom: 10px;
+  margin-bottom: 25px;
 `;
 
 const Input = styled.input`
