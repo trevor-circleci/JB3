@@ -10,7 +10,12 @@ import ReactTooltip from 'react-tooltip';
 
 import getDisqusId from '../utils/getDisqusId';
 import * as colors from '../styles/colors';
-import { Layout, PostNavigation, SubscribeForm } from '../components/common';
+import {
+  Layout,
+  PostNavigation,
+  SubscribeForm,
+  AuthorBlock,
+} from '../components/common';
 import { MetaData } from '../components/common/meta';
 
 // Prism: Syntax Highlighting
@@ -133,7 +138,8 @@ class Post extends React.Component {
                   className="content-body load-external-scripts"
                   dangerouslySetInnerHTML={{ __html: post.html }}
                 />
-                <SubscribeForm />
+
+                <AuthorBlock />
 
                 {disqusID && !showComments && (
                   <LoadCommentsButton onClick={this.handleShowComments}>
@@ -142,6 +148,8 @@ class Post extends React.Component {
                 )}
 
                 {showComments && <DiscussionEmbed {...disqusConfig} />}
+
+                <SubscribeForm />
               </section>
             </article>
           </div>

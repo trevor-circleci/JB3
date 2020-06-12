@@ -5,13 +5,18 @@ import addToMailchimp from 'gatsby-plugin-mailchimp';
 import * as colors from '../../styles/colors';
 
 const Form = styled.form`
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0 0 1px ${colors.border};
-  padding: 2rem;
+  box-shadow: 0 0 1px rgba(98, 123, 142, 0.81);
   text-align: center;
   margin-top: 20px;
+  padding: 3rem 2rem;
+
+  @media (min-width: 735px) {
+    padding: 5rem 0;
+  }
 `;
 
 const Title = styled.div`
@@ -89,8 +94,10 @@ class SubscribeForm extends React.Component {
     } else {
       render = (
         <>
-          <Title>Subscribe</Title>
-          <Heading>Be the first to know when I publish new content</Heading>
+          <Title>Like this kind of stuff?</Title>
+          <Heading>
+            Be the first to know when I put the next thing together.
+          </Heading>
           <Input
             placeholder="Enter Email Address"
             onChange={e => {
