@@ -66,7 +66,7 @@ const Component = ({ data }) => (
         Application Developer • Engineering Manager • Designer • Instructor •
         Writer • Formerly @Sosh (Acquired By @Postmates) • Generally an
         optimist. <br />
-        <br /> Reach me
+        <br /> Reach me{' '}
         <a
           href="https://twitter.com/JoseBrowneX"
           target="_blank"
