@@ -63,16 +63,19 @@ const Date = styled.p`
 `;
 
 class Post extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
-      disqusID: null,
-      showComments: false,
+      disqusID: getDisqusId(props.data.ghostPost),
+      showComments:
+        typeof window !== `undefined` &&
+        !!window.location.hash &&
+        window.location.hash.includes('#comment-'),
     };
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
     Prism.highlightAll();
     // Try here to catch exception thrown when navigating to/from post page
     try {
@@ -80,21 +83,7 @@ class Post extends React.Component {
     } catch (e) {
       return;
     }
-
-    this.setState(
-      {
-        disqusID: getDisqusId(this.props.data.ghostPost),
-      },
-      () => {
-        if (
-          window.location.hash &&
-          window.location.hash.includes('#comment-')
-        ) {
-          this.handleShowComments();
-        }
-      },
-    );
-  }
+  };
 
   handleShowComments = () => {
     this.setState({ showComments: true });
